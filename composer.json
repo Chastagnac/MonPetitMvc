@@ -1,0 +1,17 @@
+{
+    "name": "vendor/mon-petit-mvc",
+    "description": "Description of project MonPetitMvc.",
+    "authors": [
+        {
+            "name": "chastagnac.leo",
+            "email": "leochastagnac@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "APP\\": "src",
+            "Tools\\": "includes"
+        }
+    }
+}
