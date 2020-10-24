@@ -15,7 +15,7 @@ try {
 
     $c = new $controller(); //instancie la classe controller dans c
     $params = array(array_slice($_REQUEST, 2));//concatenation des 3 tableaux $get $post et $cookie -> recupère ce qu'il y a dans $post (,2)
-    call_user_func_array(array($c, $action), $params);//permet d'appeler une methodde di,e cmasse e, âsssé 
+    call_user_func_array(array($c, $action), $params);//permet d'appeler une methodde de rappel
 } catch (Exception $ex) {
     echo $ex->getMessage();
     //$vue =

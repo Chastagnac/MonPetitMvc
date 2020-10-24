@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Model;
+namespace APP\Model;
 
 use \PDO;
 use APP\Entity\Client;
@@ -13,8 +13,15 @@ class GestionClientModel {
         $unObjetPdo = Connexion::getConnexion();
         $sql = "select * from CLIENT where id=:id";
         $ligne = $unObjetPdo->prepare($sql);
-        $ligne->binValue(':id', $id, PDO::PARAM_BOOL); //Associe une valeur à un paramètre :id
+        $ligne->bindValue(':id', $id, PDO::PARAM_BOOL); //Associe une valeur à un paramètre :id
         $ligne->execute();
-        return $ligne->fetchObjet(Client::class);//Récupère la prochaine ligne et la retourne en tant qu'objet
+        return $ligne->fetchObject(Client::class);//Récupère la prochaine ligne et la retourne en tant qu'objet
+    }
+    
+    public function findAll(){
+        $unObjectPdo = Connexion::getConnexion();
+        $sql = "select * from CLIENT";
+        $lignes = $unObjectPdo->query($sql);
+        return $lignes->fetchAll(PDO::FETCH_CLASS, Client::class);
     }
 }

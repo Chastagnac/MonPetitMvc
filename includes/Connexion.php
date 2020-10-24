@@ -1,5 +1,9 @@
 <?php
 
+namespace Tools;
+
+use PDO;
+
 class Connexion {
 
     private static $connexion = null;
@@ -20,7 +24,7 @@ class Connexion {
     public static function getConnexion() {
 
         if (is_null(self::$connexionInstance)) {
-            self::$connexionInstance = new Conqnexion();
+            self::$connexionInstance = new Connexion();
         }
 
         return self::$connexion;
