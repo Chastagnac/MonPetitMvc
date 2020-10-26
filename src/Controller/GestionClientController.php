@@ -7,7 +7,7 @@ use ReflectionClass;
 
 class GestionClientController {
 
-    public function chercheUn($params) {
+    public function chercheUn(array $params):void {
         $modele = new GestionClientModel();
         $id = filter_var(intval($params["id"]), FILTER_VALIDATE_INT); //filter si l'id passé en parametre est bien un int
         $unClient = $modele->find($id);
@@ -19,7 +19,7 @@ class GestionClientController {
         }
     }
 
-    public function chercheTous() {
+    public function chercheTous():void {
         $modele = new GestionClientModel();
         $clients = $modele->findAll();
         if ($clients) {
@@ -29,6 +29,4 @@ class GestionClientController {
             throw new Exception("Aucun Client à afficher");
         }
     }
-
-
 }

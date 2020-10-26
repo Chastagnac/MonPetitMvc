@@ -8,7 +8,7 @@ use Tools\Connexion;
 
 class GestionClientModel {
 
-    public function find($id) {
+    public function find(int $id): Client {
         $unObjetPdo = Connexion::getConnexion();
         $sql = "select * from CLIENT where id=:id";
         $ligne = $unObjetPdo->prepare($sql);
@@ -17,13 +17,11 @@ class GestionClientModel {
         return $ligne->fetchObject(Client::class); //Récupère la prochaine ligne et la retourne en tant qu'objet
     }
 
-    public function findAll() {
+    public function findAll():Client {
         $unObjectPdo = Connexion::getConnexion();
         $sql = "select * from CLIENT";
         $lignes = $unObjectPdo->query($sql);
         return $lignes->fetchAll(PDO::FETCH_CLASS, Client::class);
     }
-
-
 
 }
