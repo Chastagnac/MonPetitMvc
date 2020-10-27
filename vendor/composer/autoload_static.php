@@ -6,10 +6,19 @@ namespace Composer\Autoload;
 
 class ComposerStaticInitc937d21247b8d5a445c4e032636d46c8
 {
+    public static $files = array (
+        '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
+    );
+
     public static $prefixLengthsPsr4 = array (
         'T' => 
         array (
+            'Twig\\' => 5,
             'Tools\\' => 6,
+        ),
+        'S' => 
+        array (
+            'Symfony\\Polyfill\\Mbstring\\' => 26,
         ),
         'A' => 
         array (
@@ -18,9 +27,17 @@ class ComposerStaticInitc937d21247b8d5a445c4e032636d46c8
     );
 
     public static $prefixDirsPsr4 = array (
+        'Twig\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/twig/twig/src',
+        ),
         'Tools\\' => 
         array (
             0 => __DIR__ . '/../..' . '/includes',
+        ),
+        'Symfony\\Polyfill\\Mbstring\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/polyfill-mbstring',
         ),
         'APP\\' => 
         array (
@@ -28,13 +45,14 @@ class ComposerStaticInitc937d21247b8d5a445c4e032636d46c8
         ),
     );
 
-    public static $classMap = array (
-        'APP\\Controller\\GestionClientController' => __DIR__ . '/../..' . '/src/Controller/GestionClientController.php',
-        'APP\\Controller\\IdentificationController' => __DIR__ . '/../..' . '/src/Controller/IdentificationController.php',
-        'APP\\Entity\\Client' => __DIR__ . '/../..' . '/src/Entity/Client.php',
-        'APP\\Entity\\Commande' => __DIR__ . '/../..' . '/src/Entity/Commande.php',
-        'APP\\Model\\GestionClientModel' => __DIR__ . '/../..' . '/src/Model/GestionClientModel.php',
-        'Tools\\Connexion' => __DIR__ . '/../..' . '/includes/Connexion.php',
+    public static $prefixesPsr0 = array (
+        'T' => 
+        array (
+            'Twig_' => 
+            array (
+                0 => __DIR__ . '/..' . '/twig/twig/lib',
+            ),
+        ),
     );
 
     public static function getInitializer(ClassLoader $loader)
@@ -42,7 +60,7 @@ class ComposerStaticInitc937d21247b8d5a445c4e032636d46c8
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInitc937d21247b8d5a445c4e032636d46c8::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInitc937d21247b8d5a445c4e032636d46c8::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInitc937d21247b8d5a445c4e032636d46c8::$classMap;
+            $loader->prefixesPsr0 = ComposerStaticInitc937d21247b8d5a445c4e032636d46c8::$prefixesPsr0;
 
         }, null, ClassLoader::class);
     }

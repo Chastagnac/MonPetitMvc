@@ -1,0 +1,16 @@
+{% extends "layout.html.twig" %}
+{% block contenu %}
+    <p> <h1> Liste des clients </h1></p>
+<p><h2>Num Nom Prenom Adresse complement cp ville tel</h2></p>
+
+<p> {{clients.getId()}}</p>
+
+
+
+
+
+{% endblock %}
+{% block footer %}
+    {{ parent() }}
+    Nombres de clients 
+{% endblock %}

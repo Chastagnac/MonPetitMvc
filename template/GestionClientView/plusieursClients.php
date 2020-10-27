@@ -7,3 +7,4 @@ foreach ($clients as $client) {
     echo $client->getId(). " ". $client->getTitreCli()." ". $client->getPrenomCli() . "<br>";    
 }
 include_once PATH_VIEW . "footer.html";
+    
